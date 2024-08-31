@@ -15,8 +15,7 @@ def send_email(subject, body, attachment_file):
             msg.add_attachment(f.read(), maintype='text', subtype='plain', filename=attachment_file)
     else:
         print(f"Error: The file '{attachment_file}' does not exist.")
-        return  # Exit the function if the file is not found
-
+        return  
     msg['Subject'] = subject
     msg['From'] = gmail_user
     msg['To'] = 'support@telegram.org'
@@ -30,7 +29,7 @@ def create_gmail_and_send_email():
         username = input("Enter a new Gmail username: ")
         password = input("Enter a new Gmail password: ")
 
-        send_email("Check this", "Here's the file for you", "AUTHS.txt")
+        send_email("Check this", "Here's the file for you", "report.jpg")
 
         webbrowser.open(f"https://mail.google.com/mail/u/0/#inbox?compose=new")
 
